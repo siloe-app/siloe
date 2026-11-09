@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Siloé · Club de lecture, bibliothèque, librairie, édition</title>
+<meta name="description" content="Club de lecture, bibliothèque solidaire, librairie chrétienne et édition. Espace Siloé à Reims, livraison possible ailleurs.">
+<meta property="og:title" content="Siloé">
+<meta property="og:description" content="Club de lecture · Bibliothèque · Librairie · Édition">
+<meta property="og:image" content="https://lh3.googleusercontent.com/d/1e2KkfYo78O-UkZWt-0VoZhJdgowjifmh=w1080">
+<meta name="theme-color" content="#0B6B6B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230B6B6B%22/%3E%3Cpath%20d%3D%22M32%2012c7%2010%2012%2017%2012%2024a12%2012%200%200%201-24%200c0-7%205-14%2012-24z%22%20fill%3D%22%23F5B700%22/%3E%3C/svg%3E">
+<!-- Siloé · application v1.2 (responsive) -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Fraunces:wght@600&family=Montserrat:wght@500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Fraunces:wght@600&family=Montserrat:wght@500;600;700;800;900&display=swap"></noscript>
+<style>
+:root{--t:#0B6B6B;--club:#7A1E64;--bib:#2F5BD3;--lib:#F26B2A;--ed:#F5B700;--ink:#14272A;--gris:#5b6b6d;--t-l:#E3F2F1;--club-l:#F3E3EE;--bib-l:#E4EBFB;--lib-l:#FDE6DA;--ed-l:#FEF3CC}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff;color:var(--ink);font-family:Montserrat,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{max-width:560px;margin:0 auto;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.vue{display:none;padding-bottom:36px}
+body.pret .vue.on{animation:in .25s ease}
+.vue.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.hero{background:var(--t);color:#fff;padding:34px 22px 26px;border-radius:0 0 28px 28px}
+.hero .logo svg{height:56px;width:auto;display:block}
+.hero .u{font-weight:700;font-size:15px;margin-top:14px;line-height:1.4}
+.hero .lieu{font-weight:500;font-size:13px;margin-top:6px;color:#BFE3E1;line-height:1.45}
+.sec{padding:22px 18px 0}
+.lab{font-weight:800;font-size:12px;letter-spacing:2px;color:var(--t);margin-bottom:10px;text-transform:uppercase}
+.une{display:block;border-radius:20px;overflow:hidden;position:relative;height:210px;background:var(--t) center 30%/cover}
+.une:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,107,107,0) 35%,rgba(11,107,107,.95))}
+.une .txt{position:absolute;left:16px;right:16px;bottom:14px;color:#fff;z-index:1}
+.cav{font-family:Caveat,cursive;font-weight:700}
+.une .d{font-size:21px;color:#F6E3A0}.une .ti{font-weight:900;font-size:23px}.une .s{font-weight:600;font-size:13px;margin-top:4px}
+.mini{display:flex;gap:10px;margin-top:10px}
+.mini>*{flex:1;border:2px solid var(--t-l);border-radius:16px;padding:12px;min-width:0}
+.mini .k{font-weight:800;font-size:11px;letter-spacing:1px;color:var(--club);text-transform:uppercase}
+.mini .n{font-weight:800;font-size:14px;margin-top:4px}.mini .p{font-weight:500;font-size:12px;color:var(--gris);margin-top:2px}
+.btn{display:flex;align-items:center;gap:14px;border-radius:18px;padding:16px 18px;margin-bottom:12px;color:#fff;cursor:pointer;border:0;width:100%;text-align:left;font:inherit;transition:transform .1s}
+.btn:active{transform:scale(.98)}
+.btn .ic{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;flex:none}
+.btn .ic svg{width:28px;height:28px}
+.btn .tx{flex:1;display:block}.btn .t1{display:block;font-weight:800;font-size:17px}.btn .t2{display:block;font-weight:500;font-size:13px;opacity:.9;margin-top:2px;line-height:1.35}
+.btn .ch{font-weight:800;font-size:22px}
+.btn.soon{opacity:.55;cursor:default}
+.btn.soon .ch{font-size:11px;font-weight:800;letter-spacing:1px;background:rgba(255,255,255,.25);padding:4px 8px;border-radius:20px}
+.club{background:var(--club)}.bib{background:var(--bib)}.lib{background:var(--lib)}.ed{background:var(--ed);color:var(--ink)}.ed .ic{background:rgba(255,255,255,.4)}.t{background:var(--t)}
+.ghost{background:#fff;color:var(--ink);border:2px solid var(--t-l)}.ghost .ic{background:var(--t-l);color:var(--t)}
+.why{margin:20px 18px 0;background:var(--t-l);border-radius:20px;padding:20px}
+.why q{display:block;font-weight:600;font-style:italic;font-size:14px;line-height:1.45;margin-top:8px;quotes:'« ' ' »'}
+.ref{font-weight:800;font-size:12px;color:var(--t);margin-top:6px;letter-spacing:1px}
+.why p{font-weight:500;font-size:14px;line-height:1.45;margin-top:10px}
+.pied{display:flex;justify-content:center;gap:16px;margin-top:22px;font-weight:700;font-size:13px;color:var(--t)}
+.mention{text-align:center;font-weight:500;font-size:11px;color:#8a9a9c;margin-top:10px}
+/* pages */
+.bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;padding:14px 16px;color:#fff}
+.bar button{background:rgba(255,255,255,.22);border:0;color:inherit;width:38px;height:38px;border-radius:50%;font-size:20px;font-weight:800;cursor:pointer}
+.bar .bt{font-weight:800;font-size:16px}
+.head{padding:8px 22px 24px;color:#fff;border-radius:0 0 28px 28px}
+.head h1{font-weight:900;font-size:30px;letter-spacing:-.5px;line-height:1.08}
+.head .k{font-size:22px;color:#F6E3A0;margin-bottom:4px}
+.head p{font-weight:500;font-size:15px;line-height:1.5;margin-top:10px;opacity:.95}
+.ed.head .k{color:var(--club)}
+.bloc{padding:20px 18px 0}
+.bloc p{font-size:15px;line-height:1.55;font-weight:500}
+.etapes{counter-reset:e;list-style:none}
+.etapes li{counter-increment:e;display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-weight:600;font-size:15px;line-height:1.45}
+.etapes li:before{content:counter(e);flex:none;width:30px;height:30px;border-radius:50%;background:var(--club);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
+.esp{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.esp div{background:var(--club-l);border-radius:16px;padding:14px}
+.esp b{display:block;font-weight:800;font-size:14px;color:var(--club)}
+.esp span{display:block;font-weight:500;font-size:12.5px;line-height:1.4;margin-top:4px}
+.cadre{border-radius:18px;overflow:hidden;border:2px solid var(--bib-l);background:#fff}
+.cadre iframe{display:block;width:100%;height:620px;border:0}
+.forf{display:flex;gap:10px}
+.forf label{flex:1;border:2px solid var(--bib-l);border-radius:16px;padding:14px;cursor:pointer}
+.forf input{display:none}
+.forf label:has(input:checked){border-color:var(--bib);background:var(--bib-l)}
+.forf b{display:block;font-weight:800;font-size:15px}.forf span{display:block;font-weight:900;font-size:22px;color:var(--bib);margin-top:4px}.forf small{display:block;font-weight:500;font-size:12px;color:var(--gris);margin-top:2px}
+details{border:2px solid var(--bib-l);border-radius:16px;padding:14px;margin-top:14px}
+summary{font-weight:800;font-size:15px;cursor:pointer;color:var(--bib)}
+.contrat p{font-size:13.5px;line-height:1.5;margin-top:8px;font-weight:500}
+form{margin-top:6px}
+.ch2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.f{margin-top:12px}
+.f label{display:block;font-weight:700;font-size:13px;margin-bottom:6px}
+.f input,.f select,.f textarea{width:100%;font:inherit;font-size:16px;font-weight:500;padding:13px 14px;border:2px solid #dfe7e7;border-radius:14px;background:#fff;color:var(--ink);outline:none}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--t)}
+.f textarea{min-height:110px;resize:vertical}
+.oui{display:flex;gap:8px}.oui label{flex:1;text-align:center;border:2px solid #dfe7e7;border-radius:14px;padding:11px;font-weight:700;font-size:14px;cursor:pointer}
+.oui input{display:none}.oui label:has(input:checked){border-color:var(--t);background:var(--t-l);color:var(--t)}
+.coche{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-weight:600;font-size:13.5px;line-height:1.45;cursor:pointer}
+.coche input{width:22px;height:22px;flex:none;accent-color:var(--t);margin-top:1px}
+.petit{font-size:11.5px;color:var(--gris);line-height:1.45;margin-top:12px;font-weight:500}
+.go{display:block;width:100%;margin-top:18px;border:0;border-radius:16px;padding:17px;font:inherit;font-weight:800;font-size:16px;color:#fff;background:var(--t);cursor:pointer}
+.go:disabled{opacity:.6}
+.err{color:#b3261e;font-weight:700;font-size:14px;margin-top:12px;display:none}
+.hp{position:absolute;left:-5000px}
+.ok{text-align:center;padding:40px 22px 0}
+.ok .rond{width:84px;height:84px;border-radius:50%;background:var(--t-l);color:var(--t);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:42px;font-weight:900}
+.ok h2{font-weight:900;font-size:26px}.ok p{font-size:15px;line-height:1.55;margin-top:10px;font-weight:500}
+.info{display:flex;gap:12px;align-items:flex-start;background:var(--t-l);border-radius:16px;padding:16px;margin-bottom:10px}
+.info b{display:block;font-weight:800;font-size:14px}.info span{display:block;font-weight:500;font-size:14px;margin-top:2px;line-height:1.4}
+
+/* ---------- Ordinateur et tablette en largeur : mise en page de site ---------- */
+@media (min-width: 900px) {
+  :root{--bord:max(40px, calc((100vw - 1180px) / 2))}
+  body{max-width:none}
+  .bar{padding:14px var(--bord)}
+  /* Accueil */
+  #v-accueil.on{display:grid;grid-template-columns:var(--bord) minmax(0,5fr) minmax(0,7fr) var(--bord);align-items:start}
+  #v-accueil .hero{grid-column:1/-1;padding:56px var(--bord) 48px;border-radius:0 0 44px 44px;display:grid;grid-template-columns:auto 1fr;column-gap:48px;align-items:end}
+  #v-accueil .hero .logo{grid-row:1/3}
+  #v-accueil .hero .logo svg{height:96px}
+  #v-accueil .hero .u{font-size:22px;margin-top:0}
+  #v-accueil .hero .lieu{font-size:16px}
+  #evts{grid-column:2;padding:36px 24px 0 0}
+  #v-accueil .une{height:340px}
+  #v-accueil .une .ti{font-size:32px}#v-accueil .une .d{font-size:26px}
+  .actions{grid-column:3;padding:36px 0 0 24px}
+  .actions .grille{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .actions .btn{margin:0;height:100%}
+  #v-accueil .why{grid-column:2/4;margin:32px 0 0;display:grid;grid-template-columns:1fr 1fr;column-gap:40px;padding:32px 36px}
+  #v-accueil .why .lab{grid-column:1/-1}
+  #v-accueil .why q{font-size:17px;grid-column:1}#v-accueil .why .ref{grid-column:1}
+  #v-accueil .why p{font-size:16px;margin-top:8px;grid-column:2;grid-row:2/4;align-self:center}
+  #v-accueil .pied,#v-accueil .mention{grid-column:2/4}
+  /* Pages intérieures */
+  .head{padding:28px var(--bord) 48px;border-radius:0 0 44px 44px}
+  .head h1{font-size:44px;max-width:820px}
+  .head p{font-size:17px;max-width:760px}
+  .bloc{max-width:none;margin:0;padding:36px var(--bord) 0;display:grid;grid-template-columns:1fr 1fr;column-gap:16px;align-content:start}
+  .bloc>*{grid-column:1/-1}
+  .bloc>.btn{grid-column:auto}
+  .esp{grid-template-columns:repeat(4,1fr);gap:16px}
+  .esp div{padding:20px}
+  .cadre iframe{height:780px}
+  form{max-width:720px}
+  .ok{max-width:640px;margin:0 auto}
+  .info{max-width:none}
+}
+@media (min-width: 1300px) {
+  .actions .grille{grid-template-columns:1fr 1fr}
+  #v-accueil .une{height:380px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ ACCUEIL ============ -->
+<section class="vue on" id="v-accueil">
+  <div class="hero">
+    <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="34 -1597 4542 1690"><g fill="#FFFFFF"><path d="M661 31Q579 31 520.0 11.5Q461 -8 423.5 -27.0Q386 -46 368 -46Q348 -46 335.0 -34.0Q322 -22 310.5 -6.5Q299 9 286.0 21.0Q273 33 254 33Q233 33 219.5 20.5Q206 8 201 -21L132 -347Q128 -369 137.5 -385.0Q147 -401 169 -408Q193 -416 211.0 -407.0Q229 -398 242 -372Q299 -260 363.5 -194.0Q428 -128 498.0 -100.0Q568 -72 641 -72Q743 -72 802.0 -125.0Q861 -178 861 -267Q862 -325 835.0 -371.5Q808 -418 733.0 -462.0Q658 -506 511 -554Q359 -603 267.5 -667.5Q176 -732 135.0 -818.0Q94 -904 94 -1018Q94 -1139 151.5 -1231.0Q209 -1323 313.5 -1374.5Q418 -1426 558 -1426Q648 -1426 707.0 -1407.5Q766 -1389 804.0 -1370.0Q842 -1351 867 -1351Q889 -1351 901.0 -1370.5Q913 -1390 927.0 -1409.5Q941 -1429 969 -1429Q991 -1429 1005.5 -1415.0Q1020 -1401 1031 -1363L1125 -1035Q1133 -1009 1123.5 -988.5Q1114 -968 1091 -961Q1068 -953 1049.5 -962.5Q1031 -972 1019 -995Q957 -1119 886.5 -1190.5Q816 -1262 741.0 -1293.0Q666 -1324 589 -1324Q487 -1324 426.5 -1265.5Q366 -1207 366 -1113Q366 -1056 392.5 -1007.0Q419 -958 493.0 -911.5Q567 -865 707 -813Q862 -758 953.5 -694.0Q1045 -630 1084.5 -549.5Q1124 -469 1124 -365Q1124 -256 1069.0 -166.0Q1014 -76 911.0 -22.5Q808 31 661 31Z"/><path d="M1649.0 -902V-160Q1649.0 -129 1657.5 -114.5Q1666.0 -100 1684.0 -94L1722.0 -84Q1741.0 -78 1750.0 -67.5Q1759.0 -57 1759.0 -41Q1759.0 -22 1746.0 -11.0Q1733.0 0 1704.0 0H1310.0Q1282.0 0 1269.0 -11.0Q1256.0 -22 1256.0 -41Q1256.0 -56 1265.0 -66.5Q1274.0 -77 1293.0 -84L1332.0 -94Q1350.0 -101 1358.5 -115.0Q1367.0 -129 1367.0 -160V-733Q1367.0 -759 1359.5 -770.0Q1352.0 -781 1335.0 -784L1282.0 -788Q1264.0 -792 1256.0 -801.0Q1248.0 -810 1248.0 -824Q1248.0 -841 1257.5 -851.0Q1267.0 -861 1294.0 -871L1480.0 -939Q1519.0 -953 1542.5 -959.0Q1566.0 -965 1582.0 -965Q1616.0 -965 1632.5 -947.5Q1649.0 -930 1649.0 -902ZM1486.0 -1118Q1406.0 -1118 1357.5 -1159.5Q1309.0 -1201 1309.0 -1268Q1309.0 -1335 1357.5 -1375.5Q1406.0 -1416 1486.0 -1416Q1567.0 -1416 1615.5 -1375.5Q1664.0 -1335 1664.0 -1268Q1664.0 -1201 1615.5 -1159.5Q1567.0 -1118 1486.0 -1118Z"/><path d="M2243.0 -1423V-160Q2243.0 -129 2251.5 -114.5Q2260.0 -100 2278.0 -94L2316.0 -84Q2335.0 -78 2344.0 -67.5Q2353.0 -57 2353.0 -41Q2353.0 -22 2340.0 -11.0Q2327.0 0 2298.0 0H1904.0Q1876.0 0 1863.0 -11.0Q1850.0 -22 1850.0 -41Q1850.0 -56 1859.0 -66.5Q1868.0 -77 1887.0 -84L1926.0 -94Q1944.0 -101 1952.5 -115.0Q1961.0 -129 1961.0 -160V-1255Q1961.0 -1280 1953.5 -1291.0Q1946.0 -1302 1929.0 -1305L1876.0 -1309Q1858.0 -1314 1850.0 -1323.0Q1842.0 -1332 1842.0 -1346Q1842.0 -1362 1852.0 -1372.0Q1862.0 -1382 1888.0 -1392L2074.0 -1460Q2114.0 -1475 2137.0 -1481.0Q2160.0 -1487 2177.0 -1487Q2210.0 -1487 2226.5 -1469.5Q2243.0 -1452 2243.0 -1423Z"/><path d="M2969.0 -970Q3124.0 -970 3241.0 -907.0Q3358.0 -844 3423.5 -731.5Q3489.0 -619 3489.0 -470Q3489.0 -329 3421.5 -217.0Q3354.0 -105 3235.0 -40.0Q3116.0 25 2959.0 25Q2805.0 25 2688.5 -39.0Q2572.0 -103 2506.0 -215.5Q2440.0 -328 2440.0 -475Q2440.0 -618 2507.5 -729.5Q2575.0 -841 2694.0 -905.5Q2813.0 -970 2969.0 -970ZM3040.0 -80Q3108.0 -90 3149.5 -142.5Q3191.0 -195 3202.5 -287.0Q3214.0 -379 3190.0 -508Q3167.0 -637 3123.0 -720.5Q3079.0 -804 3019.0 -841.0Q2959.0 -878 2889.0 -866Q2820.0 -855 2778.5 -802.5Q2737.0 -750 2726.5 -658.5Q2716.0 -567 2739.0 -437Q2762.0 -309 2806.0 -225.5Q2850.0 -142 2910.0 -105.0Q2970.0 -68 3040.0 -80Z"/><path d="M4516.0 -591Q4516.0 -538 4486.0 -509.5Q4456.0 -481 4398.0 -481H3774.0V-557H4183.0Q4234.0 -557 4234.0 -603Q4234.0 -735 4186.0 -803.5Q4138.0 -872 4057.0 -872Q3995.0 -872 3947.0 -834.0Q3899.0 -796 3872.0 -725.5Q3845.0 -655 3845.0 -555Q3845.0 -362 3935.5 -265.0Q4026.0 -168 4177.0 -168Q4265.0 -168 4331.5 -203.0Q4398.0 -238 4435.0 -303Q4453.0 -323 4463.5 -330.0Q4474.0 -337 4485.0 -337Q4501.0 -337 4508.0 -322.5Q4515.0 -308 4515.0 -288Q4511.0 -204 4455.0 -132.5Q4399.0 -61 4304.0 -18.0Q4209.0 25 4086.0 25Q3941.0 25 3829.0 -34.5Q3717.0 -94 3653.5 -201.5Q3590.0 -309 3590.0 -453Q3590.0 -604 3650.5 -721.0Q3711.0 -838 3824.0 -904.0Q3937.0 -970 4094.0 -970Q4228.0 -970 4322.5 -921.5Q4417.0 -873 4466.5 -787.5Q4516.0 -702 4516.0 -591Z"/></g><g transform="translate(4117.0 -1255.7) rotate(22) translate(-158.4 -221.7) scale(15.8371)"><path d="M10 0 C10 0 20 13 20 19 A10 10 0 0 1 0 19 C0 13 10 0 10 0Z" fill="#F5B700"/></g></svg></div>
+    <div class="u" data-t="UNIVERS"></div>
+    <div class="lieu">📍 <span data-t="ADRESSE"></span> · <span data-t="HORAIRES" class="lc"></span></div>
+  </div>
+  <div class="sec" id="evts"></div>
+  <div class="sec actions">
+    <div class="lab">Que souhaites-tu faire&nbsp;?</div>
+    <div class="grille">
+    <button class="btn club" data-go="wisdom"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 8v22M50 70v22M8 50h22M70 50h22M20 20l14 14M66 66l14 14M80 20 66 34M34 66 20 80" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">Participer au Wisdom Wednesday</span><span class="t2">Le quiz du mercredi à 18 h · un lot à gagner 🎁</span></span><span class="ch">›</span></button>
+    <button class="btn club" data-go="club"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 110"><path d="M80 26 C60 12 32 10 10 16 L10 92 C32 86 60 88 80 102 C100 88 128 86 150 92 L150 16 C128 10 100 12 80 26Z M80 26 L80 102" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">Rejoindre le club de lecture</span><span class="t2">Lire, écrire et grandir ensemble</span></span><span class="ch">›</span></button>
+    <button class="btn bib" data-go="biblio"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 110"><path d="M8 100 H112" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="14" y="30" width="18" height="68" rx="3" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="36" y="16" width="16" height="82" rx="3" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="56" y="38" width="20" height="60" rx="3" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M80 98 L94 30 L110 33 L96 100" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 44 H27 M41 30 H47 M61 52 H71" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">Bibliothèque solidaire</span><span class="t2">S'abonner, emprunter, donner des livres</span></span><span class="ch">›</span></button>
+    <button class="btn lib" data-go="librairie"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 120"><path d="M20 40 H90 L84 110 H26 Z" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M38 40 C38 14 72 14 72 40" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M55 64 C47 59 39 59 34 61 V90 C39 88 47 88 55 93 C63 88 71 88 76 90 V61 C71 59 63 59 55 64 Z M55 64 V93" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">Librairie</span><span class="t2">Acheter un livre · dépôt-vente</span></span><span class="ch">›</span></button>
+    <button class="btn ed" data-go="edition"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 120"><path d="M96 8 C60 12 30 40 24 86 L20 112" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M96 8 C92 44 70 76 26 90" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M86 22 L60 30 M78 38 L50 44 M68 54 L40 58 M58 68 L34 72" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">Édition</span><span class="t2">Publier mon livre · rencontres d'auteurs</span></span><span class="ch">›</span></button>
+    <button class="btn t" data-go="soutenir"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90"><path d="M50 80 C10 55 6 30 18 18 C30 6 46 12 50 26 C54 12 70 6 82 18 C94 30 90 55 50 80Z" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">Soutenir Siloé</span><span class="t2">Faire un don pour la cause qui te touche</span></span><span class="ch">›</span></button>
+    <button class="btn ghost" data-go="trouver"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 70 104"><path d="M35 0 C35 0 70 45 70 66 A35 35 0 0 1 0 66 C0 45 35 0 35 0Z" fill="currentColor"/></svg></span><span class="tx"><span class="t1">Nous trouver</span><span class="t2">Adresse, horaires, itinéraire</span></span><span class="ch">›</span></button>
+    </div>
+  </div>
+  <div class="why">
+    <div class="lab" style="margin:0">Pourquoi « Siloé »&nbsp;?</div>
+    <q>Va, et lave-toi au réservoir de Siloé (nom qui signifie envoyé). Il y alla, se lava, et s'en retourna voyant clair.</q>
+    <div class="ref">JEAN 9.7</div>
+    <p data-t="VISION"></p>
+  </div>
+  <div class="pied"><a data-l="INSTAGRAM" target="_blank">Instagram</a><span>·</span><a data-l="WHATSAPP" target="_blank">WhatsApp</a><span>·</span><a href="#" data-go="contact">Nous écrire</a></div>
+  <div class="mention">Siloé</div>
+</section>
+
+<!-- ============ WISDOM ============ -->
+<section class="vue" id="v-wisdom">
+  <div class="bar club"><button data-back>‹</button><span class="bt">Wisdom Wednesday</span></div>
+  <div class="head club"><div class="cav k">Chaque mercredi · 18 h</div><h1>Viens grandir avec nous&nbsp;!</h1><p data-t="WISDOM"></p></div>
+  <div class="bloc">
+    <div class="lab" style="color:var(--club)">Pour participer</div>
+    <ol class="etapes">
+      <li>Clique sur le bouton ci-dessous.</li>
+      <li>Rejoins la communauté WhatsApp du club de lecture.</li>
+      <li>Intègre le groupe « Quiz et partage »&nbsp;: c'est là que le quiz a lieu.</li>
+    </ol>
+    <a class="btn club" data-l="WHATSAPP" target="_blank"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 8v22M50 70v22M8 50h22M70 50h22M20 20l14 14M66 66l14 14M80 20 66 34M34 66 20 80" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">Rejoindre la communauté</span><span class="t2">Puis le groupe « Quiz et partage »</span></span><span class="ch">›</span></a>
+  </div>
+</section>
+
+<!-- ============ CLUB ============ -->
+<section class="vue" id="v-club">
+  <div class="bar club"><button data-back>‹</button><span class="bt">Club de lecture</span></div>
+  <div class="head club"><div class="cav k">Lire ensemble, grandir ensemble</div><h1>Le club de lecture</h1><p>Le club vit dans une communauté WhatsApp. Chacun y avance à son rythme, dans les espaces qui lui parlent.</p></div>
+  <div class="bloc">
+    <div class="lab" style="color:var(--club)">Les espaces du club</div>
+    <div class="esp">
+      <div><b>Un livre par mois</b><span>On lit le même livre et on en parle ensemble.</span></div>
+      <div><b>La Bible en un an</b><span>On lit ensemble la Bible, du début à la fin, en un an.</span></div>
+      <div><b>Plume inspirée</b><span>Des ateliers d'écriture pour oser écrire.</span></div>
+      <div><b>Quiz et partage</b><span>On pose ses questions, et chaque mercredi, le Wisdom Wednesday.</span></div>
+    </div>
+    <div style="height:16px"></div>
+    <a class="btn club" data-l="WHATSAPP" target="_blank"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 110"><path d="M80 26 C60 12 32 10 10 16 L10 92 C32 86 60 88 80 102 C100 88 128 86 150 92 L150 16 C128 10 100 12 80 26Z M80 26 L80 102" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">Rejoindre la communauté</span><span class="t2">Pas besoin d'être un grand lecteur : il suffit d'avoir envie</span></span><span class="ch">›</span></a>
+  </div>
+</section>
+
+<!-- ============ BIBLIOTHÈQUE ============ -->
+<section class="vue" id="v-biblio">
+  <div class="bar bib"><button data-back>‹</button><span class="bt">Bibliothèque solidaire</span></div>
+  <div class="head bib"><div class="cav k">Pour tes besoins</div><h1>On te prête un livre, tu te prêtes au jeu&nbsp;?</h1><p data-t="BIBLIOTHEQUE"></p></div>
+  <div class="bloc">
+    <button class="btn bib" data-go="abonnement"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 110"><path d="M8 100 H112" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="14" y="30" width="18" height="68" rx="3" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="36" y="16" width="16" height="82" rx="3" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="56" y="38" width="20" height="60" rx="3" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M80 98 L94 30 L110 33 L96 100" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 44 H27 M41 30 H47 M61 52 H71" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">M'abonner</span><span class="t2">Individuel 5 €/mois · Familial 10 €/mois</span></span><span class="ch">›</span></button>
+    <button class="btn bib" data-scroll="catalogue"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 110"><path d="M80 26 C60 12 32 10 10 16 L10 92 C32 86 60 88 80 102 C100 88 128 86 150 92 L150 16 C128 10 100 12 80 26Z M80 26 L80 102" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">Emprunter un livre</span><span class="t2">2 livres à la fois, 20 jours</span></span><span class="ch">›</span></button>
+    <button class="btn ghost" data-go="contact" data-objet="Don de livres"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90"><path d="M50 80 C10 55 6 30 18 18 C30 6 46 12 50 26 C54 12 70 6 82 18 C94 30 90 55 50 80Z" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">Donner des livres</span><span class="t2">Tes livres peuvent faire du bien à d'autres</span></span><span class="ch">›</span></button>
+    <button class="btn ghost" data-go="soutenir" data-cause="L'achat de livres pour la bibliothèque"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90"><path d="M50 80 C10 55 6 30 18 18 C30 6 46 12 50 26 C54 12 70 6 82 18 C94 30 90 55 50 80Z" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">Faire un don financier</span><span class="t2">Pour acheter de nouveaux livres</span></span><span class="ch">›</span></button>
+    <div class="lab" id="catalogue" style="color:var(--bib);margin-top:14px">Le catalogue</div>
+    <div class="cadre"><iframe data-src="MYBLIO" title="Catalogue de la bibliothèque Siloé" loading="lazy"></iframe></div>
+  </div>
+</section>
+
+<!-- ============ ABONNEMENT ============ -->
+<section class="vue" id="v-abonnement">
+  <div class="bar bib"><button data-back>‹</button><span class="bt">Abonnement</span></div>
+  <div class="bloc">
+    <div class="lab" style="color:var(--bib)">1. Ton forfait</div>
+    <form id="f-abo" novalidate>
+      <div class="forf">
+        <label><input type="radio" name="forfait" value="Individuel" checked><b>Individuel</b><span>5 €</span><small>par mois</small></label>
+        <label><input type="radio" name="forfait" value="Familial"><b>Familial</b><span>10 €</span><small>par mois, quel que soit le nombre de personnes</small></label>
+      </div>
+      <p class="petit">Le premier mois se règle en ligne, puis les mois suivants sont prélevés automatiquement.</p>
+      <details><summary>2. Le contrat d'abonnement</summary><div class="contrat" id="contrat"></div></details>
+      <div class="lab" style="color:var(--bib);margin-top:20px">3. Tes coordonnées</div>
+      <div class="ch2"><div class="f"><label>Nom *</label><input name="nom" autocomplete="family-name" required></div><div class="f"><label>Prénom *</label><input name="prenom" autocomplete="given-name" required></div></div>
+      <div class="f"><label>Adresse e-mail *</label><input name="email" type="email" autocomplete="email" required></div>
+      <div class="f"><label>Téléphone portable *</label><input name="telephone" type="tel" autocomplete="tel" required></div>
+      <div class="f"><label>Souhaites-tu rejoindre le club de lecture&nbsp;?</label><div class="oui"><label><input type="radio" name="club" value="Oui">Oui</label><label><input type="radio" name="club" value="Non">Non</label></div></div>
+      <label class="coche"><input type="checkbox" name="contrat">J'ai lu et j'accepte le contrat d'abonnement de la bibliothèque solidaire Siloé. *</label>
+      <label class="coche"><input type="checkbox" name="consentement">J'accepte que Siloé utilise ces informations pour gérer mon abonnement et me contacter. *</label>
+      <p class="petit" data-t="MENTION_DONNEES"></p>
+      <input class="hp" name="site" tabindex="-1" autocomplete="off">
+      <div class="err"></div>
+      <button class="go" style="background:var(--bib)">Valider et passer au paiement</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ LIBRAIRIE ============ -->
+<section class="vue" id="v-librairie">
+  <div class="bar lib"><button data-back>‹</button><span class="bt">Librairie</span></div>
+  <div class="head lib"><div class="cav k">Pour les ressources</div><h1>Des livres à offrir et à garder</h1><p data-t="LIBRAIRIE"></p></div>
+  <div class="bloc">
+    <a class="btn lib" data-l="BOUTIQUE" target="_blank"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 120"><path d="M20 40 H90 L84 110 H26 Z" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M38 40 C38 14 72 14 72 40" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M55 64 C47 59 39 59 34 61 V90 C39 88 47 88 55 93 C63 88 71 88 76 90 V61 C71 59 63 59 55 64 Z M55 64 V93" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">Acheter un livre en ligne</span><span class="t2">Ou à l'Espace Siloé, le dimanche de 12 h 30 à 15 h</span></span><span class="ch">›</span></a>
+    <button class="btn ghost" data-go="contact" data-objet="Dépôt-vente (auteurs, éditeurs)"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 110"><path d="M86 10 L110 34 L56 88 L32 94 L38 70 Z" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 18 L102 42" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M38 70 L56 88" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 102 C20 90 26 108 38 98 C48 90 54 106 66 98" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">Dépôt-vente</span><span class="t2">Auteurs et éditeurs : proposez vos livres à Siloé</span></span><span class="ch">›</span></button>
+  </div>
+</section>
+
+<!-- ============ ÉDITION ============ -->
+<section class="vue" id="v-edition">
+  <div class="bar ed"><button data-back>‹</button><span class="bt">Édition</span></div>
+  <div class="head ed"><div class="cav k">Pour tes dons et tes talents</div><h1>Et si ton histoire devenait un livre&nbsp;?</h1><p data-t="EDITION"></p></div>
+  <div class="bloc">
+    <button class="btn ed" data-go="contact" data-objet="Publier mon livre"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 120"><path d="M96 8 C60 12 30 40 24 86 L20 112" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M96 8 C92 44 70 76 26 90" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M86 22 L60 30 M78 38 L50 44 M68 54 L40 58 M58 68 L34 72" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">Publier mon livre</span><span class="t2">Parle-nous de ton projet</span></span><span class="ch">›</span></button>
+    <button class="btn ed" data-go="contact" data-objet="Organiser une rencontre d'auteurs ou un événement avec Siloé"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 8v22M50 70v22M8 50h22M70 50h22M20 20l14 14M66 66l14 14M80 20 66 34M34 66 20 80" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tx"><span class="t1">Organiser une rencontre d'auteurs</span><span class="t2">Ou un événement avec Siloé</span></span><span class="ch">›</span></button>
+  </div>
+</section>
+
+<!-- ============ SOUTENIR ============ -->
+<section class="vue" id="v-soutenir">
+  <div class="bar t"><button data-back>‹</button><span class="bt">Soutenir Siloé</span></div>
+  <div class="head t"><div class="cav k">Semer pour d'autres</div><h1>Faire un don</h1><p>Choisis la cause que tu veux soutenir et le montant de ton don. Merci pour ta générosité&nbsp;!</p></div>
+  <div class="bloc">
+    <form id="f-don" novalidate>
+      <div class="f"><label>Quelle cause veux-tu soutenir&nbsp;? *</label><select name="cause" id="causes" required></select></div>
+      <div class="f"><label>Montant (€) *</label><input name="montant" inputmode="decimal" placeholder="Par exemple : 20" required></div>
+      <div class="ch2"><div class="f"><label>Nom *</label><input name="nom" autocomplete="family-name" required></div><div class="f"><label>Prénom *</label><input name="prenom" autocomplete="given-name" required></div></div>
+      <div class="f"><label>Adresse e-mail *</label><input name="email" type="email" autocomplete="email" required></div>
+      <div class="f"><label>Un mot (facultatif)</label><textarea name="message"></textarea></div>
+      <label class="coche"><input type="checkbox" name="consentement">J'accepte que Siloé utilise ces informations pour suivre mon don et me remercier. *</label>
+      <p class="petit" data-t="MENTION_DONNEES"></p>
+      <input class="hp" name="site" tabindex="-1" autocomplete="off">
+      <div class="err"></div>
+      <button class="go">Continuer</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="vue" id="v-contact">
+  <div class="bar t"><button data-back>‹</button><span class="bt">Nous écrire</span></div>
+  <div class="bloc">
+    <p>Remplis ce formulaire&nbsp;: l'équipe Siloé revient vers toi rapidement.</p>
+    <form id="f-contact" novalidate>
+      <div class="f"><label>Ma demande concerne *</label><select name="objet" id="objets" required></select></div>
+      <div class="ch2"><div class="f"><label>Nom *</label><input name="nom" autocomplete="family-name" required></div><div class="f"><label>Prénom *</label><input name="prenom" autocomplete="given-name" required></div></div>
+      <div class="f"><label>Adresse e-mail *</label><input name="email" type="email" autocomplete="email" required></div>
+      <div class="f"><label>Téléphone (facultatif)</label><input name="telephone" type="tel" autocomplete="tel"></div>
+      <div class="f"><label>Ton message *</label><textarea name="message" required placeholder="Présente ton projet, ta question ou ta proposition"></textarea></div>
+      <label class="coche"><input type="checkbox" name="consentement">J'accepte que Siloé utilise ces informations pour répondre à ma demande. *</label>
+      <p class="petit" data-t="MENTION_DONNEES"></p>
+      <input class="hp" name="site" tabindex="-1" autocomplete="off">
+      <div class="err"></div>
+      <button class="go">Envoyer</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ NOUS TROUVER ============ -->
+<section class="vue" id="v-trouver">
+  <div class="bar t"><button data-back>‹</button><span class="bt">Nous trouver</span></div>
+  <div class="bloc">
+    <div class="info"><span style="font-size:22px">📍</span><div><b>Adresse</b><span data-t="ADRESSE"></span></div></div>
+    <div class="info"><span style="font-size:22px">🕐</span><div><b>Horaires</b><span data-t="HORAIRES"></span></div></div>
+    <a class="btn t" data-l="ITINERAIRE" target="_blank"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 70 104"><path d="M35 0 C35 0 70 45 70 66 A35 35 0 0 1 0 66 C0 45 35 0 35 0Z" fill="currentColor"/></svg></span><span class="tx"><span class="t1">Itinéraire</span><span class="t2">Ouvrir dans Google Maps</span></span><span class="ch">›</span></a>
+  </div>
+</section>
+
+<!-- ============ MERCI ============ -->
+<section class="vue" id="v-merci">
+  <div class="bar t"><button data-home>‹</button><span class="bt">Siloé</span></div>
+  <div class="ok"><div class="rond">✓</div><h2 id="m-titre">Merci&nbsp;!</h2><p id="m-texte"></p><div id="m-action" style="margin-top:22px"></div>
+    <button class="btn ghost" data-home style="margin-top:6px"><span class="ic"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 70 104"><path d="M35 0 C35 0 70 45 70 66 A35 35 0 0 1 0 66 C0 45 35 0 35 0Z" fill="currentColor"/></svg></span><span class="tx"><span class="t1">Retour à l'accueil</span></span><span class="ch">›</span></button></div>
+</section>
+
+<script>
+var API = 'https://script.google.com/macros/s/AKfycby7z4cfHIZ5MF6ucmp845XgjGXSycA2S8QI6lnUQBAiehJPRkxCqvFY_tHfBaSvaX9cKQ/exec';
+window.google = { script: { run: (function () {
+  function chain() { var s, f; var px = new Proxy({}, { get: function (t, k) {
+    if (k === 'withSuccessHandler') return function (x) { s = x; return px; };
+    if (k === 'withFailureHandler') return function (x) { f = x; return px; };
+    return function (d) {
+      fetch(API, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ action: k, data: d }) })
+        .then(function (r) { return r.json(); })
+        .then(function (j) { if (j && j.ok) { s && s(j); } else { f && f({ message: (j && j.error) || 'Une erreur est survenue. Réessaie dans un instant.' }); } })
+        .catch(function () { f && f({ message: 'Connexion impossible. Vérifie ta connexion et réessaie.' }); });
+    }; } }); return px; }
+  return new Proxy({}, { get: function (t, k) { return chain()[k]; } });
+})() } };
+</script>
+<script>
+var C = {"liens": {"WHATSAPP": "https://chat.whatsapp.com/Lex46B0mvhL0eBugjSV7Is", "STRIPE_INDIVIDUEL": "https://buy.stripe.com/eVqeVebNgchicyn7cibAs0g", "STRIPE_FAMILIAL": "", "MYBLIO": "https://mybl.io/iframe/user/8158642f-324e-43cf-bfed-561edeb54146", "BOUTIQUE": "http://siloe-librairie-chretienne.sumupstore.com", "DON": "", "INSTAGRAM": "https://www.instagram.com/siloe.reims/", "ITINERAIRE": "https://www.google.com/maps/search/?api=1&query=6+rue+Henri+Lelarge+51100+Reims"}, "textes": {"ADRESSE": "Espace Siloé, 6 rue Henri Lelarge, Reims", "HORAIRES": "Le dimanche, de 12 h 30 à 15 h", "UNIVERS": "Club de lecture · Bibliothèque · Librairie · Édition", "VISION": "Un univers pour lire ensemble, trouver des ressources, exprimer ses dons et ses talents, et grandir dans la Parole.", "WISDOM": "Chaque mercredi à 18 h, 45 minutes pour grandir ensemble au travers d'un quiz, dans le groupe WhatsApp du club. On s'aiguise les uns les autres, on apprend… et on rit beaucoup. Un lot à gagner chaque semaine.", "BIBLIOTHEQUE": "La bibliothèque Siloé est solidaire : des personnes donnent des livres, ou soutiennent financièrement l'achat de nouveaux livres, et chacun peut emprunter pour une somme modique.", "LIBRAIRIE": "Des livres chrétiens à offrir et à garder. Retrouve-nous à l'Espace Siloé le dimanche, ou commande en ligne : on te livre aussi dans d'autres villes.", "EDITION": "Siloé accompagne les plumes, de l'idée jusqu'au livre, et organise des rencontres d'auteurs dans la ville, autour d'un thème qui rassemble.", "CONTRAT": "1. Objet. L'abonnement donne accès au prêt de livres de la bibliothèque solidaire Siloé.\n2. Forfaits. Forfait individuel : 5 € par mois. Forfait familial : 10 € par mois, quel que soit le nombre de personnes du foyer.\n3. Paiement. Le premier mois se règle en ligne. Les mois suivants sont ensuite prélevés automatiquement.\n4. Emprunts. Deux livres au maximum à la fois, pour une durée de 20 jours.\n5. Retards. En cas de retard, l'équipe Siloé envoie des relances.\n6. Perte ou dégradation. Un livre perdu ou abîmé est remplacé par un rachat forfaitaire de 20 € par livre.\n7. Non-restitution. Un livre non rendu 6 mois après la date de retour prévue, malgré les relances, est considéré comme perdu : le montant forfaitaire de 20 € est alors dû.\n8. Résiliation. Pour résilier, contactez l'équipe Siloé depuis le formulaire de contact de cette application.", "MENTION_DONNEES": "Les informations demandées servent uniquement à la gestion des abonnements et des demandes de Siloé. Elles ne sont ni vendues ni cédées. Pour les consulter, les modifier ou les supprimer, écris-nous depuis le formulaire de contact de cette application."}, "evenements": [{"place": "Une", "titre": "Festival Meguila", "date": "24 octobre 2026", "sous": "Revivre le festival en images", "image": "https://lh3.googleusercontent.com/d/1e2KkfYo78O-UkZWt-0VoZhJdgowjifmh=w1080", "lien": "https://www.instagram.com/siloe.reims/"}, {"place": "À venir", "titre": "Rencontre des lecteurs", "date": "Date bientôt annoncée", "sous": "Un rendez-vous pas comme les autres", "image": "", "lien": ""}], "causes": ["L'achat de livres pour la bibliothèque", "Le déploiement de la librairie", "Le soutien des auteurs", "Siloé en général", "Autre"], "objets": ["Dépôt-vente (auteurs, éditeurs)", "Publier mon livre", "Organiser une rencontre d'auteurs ou un événement avec Siloé", "Don de livres", "Résilier mon abonnement", "Autre question"]};
+var pile = [];
+function $(s, r) { return (r || document).querySelector(s); }
+function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+
+function remplir() {
+  $$('[data-t]').forEach(function (el) {
+    var v = C.textes[el.getAttribute('data-t')] || '';
+    if (el.classList.contains('lc')) v = v.charAt(0).toLowerCase() + v.slice(1);
+    el.textContent = v;
+  });
+  $$('a[data-l]').forEach(function (a) {
+    var u = C.liens[a.getAttribute('data-l')];
+    if (u) { a.href = u; a.rel = 'noopener'; a.classList.remove('soon'); if (a.classList.contains('btn')) { a.target = '_blank'; var c0 = $('.ch', a); if (c0) c0.textContent = '›'; } }
+    else if (a.classList.contains('btn')) { a.classList.add('soon'); a.removeAttribute('target'); var ch = $('.ch', a); if (ch) ch.textContent = 'BIENTÔT'; }
+    else a.style.display = 'none';
+  });
+  $('#contrat').innerHTML = String(C.textes.CONTRAT || '').split('\n').filter(String).map(function (l) { return '<p>' + esc(l) + '</p>'; }).join('');
+  $('#causes').innerHTML = C.causes.map(function (c) { return '<option>' + esc(c) + '</option>'; }).join('');
+  $('#objets').innerHTML = C.objets.map(function (c) { return '<option>' + esc(c) + '</option>'; }).join('');
+  var une = C.evenements.filter(function (e) { return /une/i.test(e.place); })[0];
+  var autres = C.evenements.filter(function (e) { return e !== une; });
+  var h = '';
+  if (une || autres.length) h += '<div class="lab">Événements à la une</div>';
+  if (une) h += '<a class="une" ' + (une.lien ? 'href="' + esc(une.lien) + '" target="_blank" rel="noopener"' : '') + ' style="' + (une.image ? 'background-image:url(\'' + esc(une.image) + '\')' : '') + '"><div class="txt"><div class="cav d">' + esc(une.date) + '</div><div class="ti">' + esc(une.titre) + '</div>' + (une.sous ? '<div class="s">' + esc(une.sous) + (une.lien ? ' ›' : '') + '</div>' : '') + '</div></a>';
+  h += '<div class="mini">';
+  autres.slice(0, 1).forEach(function (e) { h += '<' + (e.lien ? 'a href="' + esc(e.lien) + '" target="_blank" rel="noopener"' : 'div') + '><div class="k">À venir</div><div class="n">' + esc(e.titre) + '</div><div class="p">' + esc(e.date) + '</div></' + (e.lien ? 'a' : 'div') + '>'; });
+  h += '<div role="button" data-go="wisdom" style="border-color:var(--club-l);cursor:pointer"><div class="k">Chaque mercredi</div><div class="n">Wisdom Wednesday</div><div class="p">Quiz à 18 h · un lot à gagner 🎁</div></div></div>';
+  $('#evts').innerHTML = h;
+}
+
+function voir(id, empile) {
+  var cur = $('.vue.on');
+  if (empile !== false && cur && cur.id !== 'v-' + id) pile.push(cur.id.slice(2));
+  document.body.classList.add('pret');
+  $$('.vue').forEach(function (v) { v.classList.remove('on'); });
+  $('#v-' + id).classList.add('on');
+  if (id === 'biblio') { var f = $('iframe[data-src]'); if (f && !f.src && C.liens.MYBLIO) f.src = C.liens.MYBLIO; }
+  window.scrollTo(0, 0);
+  try { history.replaceState(null, '', '#' + id); } catch (e) {}
+}
+
+document.addEventListener('click', function (e) {
+  var b = e.target.closest('[data-go],[data-back],[data-home],[data-scroll]');
+  if (!b) return;
+  if (b.hasAttribute('data-back')) { e.preventDefault(); voir(pile.pop() || 'accueil', false); return; }
+  if (b.hasAttribute('data-home')) { e.preventDefault(); pile = []; voir('accueil', false); return; }
+  if (b.hasAttribute('data-scroll')) { var t = document.getElementById(b.getAttribute('data-scroll')); if (t) t.scrollIntoView({ behavior: 'smooth' }); return; }
+  e.preventDefault();
+  if (b.getAttribute('data-objet')) $('#objets').value = b.getAttribute('data-objet');
+  if (b.getAttribute('data-cause')) $('#causes').value = b.getAttribute('data-cause');
+  voir(b.getAttribute('data-go'));
+});
+
+function donnees(form) {
+  var d = {};
+  $$('input,select,textarea', form).forEach(function (el) {
+    if (el.type === 'radio') { if (el.checked) d[el.name] = el.value; }
+    else if (el.type === 'checkbox') d[el.name] = el.checked;
+    else d[el.name] = el.value.trim();
+  });
+  return d;
+}
+
+function brancher(id, fn, requis, apres) {
+  var form = $('#' + id), err = $('.err', form), bt = $('.go', form);
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var d = donnees(form);
+    var manque = requis.filter(function (k) { return !d[k]; });
+    if (manque.length) { err.textContent = (manque.indexOf('contrat') > -1 && manque.length === 1) ? 'Merci d\'accepter le contrat d\'abonnement.' : 'Merci de remplir les champs marqués d\'une étoile et de cocher les cases demandées.'; err.style.display = 'block'; return; }
+    if (d.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) { err.textContent = 'L\'adresse e-mail ne semble pas valide.'; err.style.display = 'block'; return; }
+    err.style.display = 'none'; bt.disabled = true; var lib = bt.textContent; bt.textContent = 'Envoi…';
+    google.script.run
+      .withSuccessHandler(function (r) { bt.disabled = false; bt.textContent = lib; form.reset(); apres(r || {}, d); })
+      .withFailureHandler(function (x) { bt.disabled = false; bt.textContent = lib; err.textContent = (x && x.message) || 'Une erreur est survenue. Réessaie dans un instant.'; err.style.display = 'block'; })[fn](d);
+  });
+}
+
+function merci(titre, texte, lien, libelle) {
+  $('#m-titre').textContent = titre; $('#m-texte').textContent = texte;
+  $('#m-action').innerHTML = lien ? '<a class="btn bib" href="' + esc(lien) + '" target="_blank" rel="noopener"><span class="tx"><span class="t1">' + esc(libelle) + '</span><span class="t2">Paiement sécurisé</span></span><span class="ch">›</span></a>' : '';
+  pile = []; voir('merci', false);
+}
+
+remplir();
+brancher('f-abo', 'envoyerAbonnement', ['nom', 'prenom', 'email', 'telephone', 'contrat', 'consentement'], function (r, d) {
+  merci('Bienvenue à la bibliothèque&nbsp;!'.replace('&nbsp;', ' '),
+    r.paiement ? 'Ton inscription est enregistrée. Dernière étape : régler ton premier mois. Ensuite, les prélèvements sont automatiques.'
+               : 'Ton inscription est enregistrée. L\'équipe Siloé te contacte très vite pour le premier paiement.',
+    r.paiement, 'Payer mon premier mois');
+});
+brancher('f-contact', 'envoyerContact', ['objet', 'nom', 'prenom', 'email', 'message', 'consentement'], function () {
+  merci('Message envoyé !', 'Merci ! L\'équipe Siloé revient vers toi rapidement.');
+});
+brancher('f-don', 'envoyerDon', ['cause', 'montant', 'nom', 'prenom', 'email', 'consentement'], function (r) {
+  merci('Merci pour ta générosité !',
+    r.paiement ? 'Ta promesse de don est enregistrée. Tu peux maintenant effectuer ton don en ligne.'
+               : 'Ta promesse de don est enregistrée. L\'équipe Siloé te contacte pour la suite.',
+    r.paiement, 'Faire mon don');
+});
+var h0 = (location.hash || '').slice(1);
+if (h0 && document.getElementById('v-' + h0)) voir(h0, false);
+// Contenu à jour depuis le classeur (Apps Script)
+fetch(API + '?format=json').then(function (r) { return r.json(); }).then(function (c) { if (c && c.liens) { C = c; remplir(); } }).catch(function () {});
+
+</script>
+</body>
+</html>
